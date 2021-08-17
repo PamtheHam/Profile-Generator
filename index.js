@@ -1,10 +1,5 @@
 // STEPS FOR HOMEWORK 
 
-// BUILD THE INQUIRER PROMPT:
-// 1. Build the manager questions
-// 2. Build the engineer questions
-// 3. Build the intern questions
-
 // BUILD THE HTML FILE
 // 1. Create cards with css classes to attach the info to from the inquirer prompt
 // 2. Connect the HTML file with the css file
@@ -54,8 +49,13 @@ const inquirer = require('inquirer');
 const util = require('util');
 
 const writeFileAsync = util.promisify(fs.writeFile);
+const Manager = require('./Lib/Manager');
+const Engineer = require('./Lib/Engineer');
+const Intern = require('./Lib/Intern');
 
-const employeeQuestions = () => {
+let wholeTeam = [];
+
+const managerQuestions = () => {
    return inquirer.prompt([
         {
         type: 'input',
@@ -77,6 +77,20 @@ const employeeQuestions = () => {
         name: 'managerOffice',
         message: 'What is the manager\'s office number?',
       },
+    ])
+
+    .then((response) => {
+      const {name, id, email, officeNumber} = response;
+      const manager = new Manager(name, id, email, officeNumber);
+
+      wholeTeam.push(manager);
+    })
+};
+
+
+
+const engineerQuestions = () => {
+  return inquirer.prompt([
     //   if engineer, 
     {
         type: 'input',
@@ -98,12 +112,24 @@ const employeeQuestions = () => {
         name: 'engineerGithub',
         message: 'What is the engineer\'s GitHub username?',
       },
+    ])
+
+    .then((response) => {
+      const {name, id, email, github} = response;
+      const engineer = new Engineer(name, id, email, github);
+
+      wholeTeam.push(engineer);
+    })
+  }
     //   if intern,
+// 
+    const internQuestions = () => {
+      return inquirer.prompt([
     {
         type: 'input',
         name: 'internName',
         message: 'What is the name of the intern?',
-          },
+    },
       {
         type: 'input',
         name: 'internId',
@@ -119,7 +145,14 @@ const employeeQuestions = () => {
         name: 'internSchool',
         message: 'What university does the intern attend?',
       },
-    ]);
+    ])
+
+    .then((response) => {
+      const {name, id, email, school} = response;
+      const intern = new Intern(name, id, email, school);
+
+      wholeTeam.push(intern);
+    })
   };
 
 const generateHTML = (answers) => 

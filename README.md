@@ -31,7 +31,7 @@ Use this application to create an HTML file that displays a summary of each of y
 I am the sole contributor to this project. You can find my contact information down below!
 
 ## Challenges
-<!-- The greatest challenge of this project was  -->
+The greatest challenge of this project was determining what approach I was going to take when inserting the user's input into the index.html file. 
 
 ## Contact Information
 If you have any questions about this project, please email me here: Hammondpamelac@gmail.com. My GitHub username is: www.github.com/PamtheHam
