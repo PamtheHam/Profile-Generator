@@ -5,7 +5,7 @@ describe("Employee", () => {
       it("should check if the object is a new Employee class", () => {
           const newEmployee = new Employee();
           expect(newEmployee instanceof Employee).toEqual(true);
-      })
+      });
 
       it("should return the name of the employee", () => {
         const name = "Pam";
@@ -17,7 +17,7 @@ describe("Employee", () => {
         const name = "Pam";
         const idNumber = "052594";
         const newEmployee = new Employee(name, idNumber);
-        expect(newEmployee.id).toEqual(id);
+        expect(newEmployee.id).toEqual(idNumber);
     });
 
     it("should return the given email address from the user", () => {
