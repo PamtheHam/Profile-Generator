@@ -65,7 +65,7 @@ const buildTeam = async () => {
           employee.name,
           employee.id,
           employee.email,
-          officeName.officeNumber
+          officeName.officeNumber,
         );
         managerArr.push(manager);
         break;
@@ -76,7 +76,7 @@ const buildTeam = async () => {
           employee.name,
           employee.id,
           employee.email,
-          gitHubName.github
+          gitHubName.github,
         );
         engineerArr.push(engineer);
         break;
@@ -87,10 +87,11 @@ const buildTeam = async () => {
           employee.name,
           employee.id,
           employee.email,
-          schoolName.school
+          schoolName.school,
         );
         internArr.push(intern);
         break;
+
       default: "";
     }
   } 
@@ -101,10 +102,10 @@ const buildTeam = async () => {
 
 const newEmployees = async () => {
   let addNewEmployee = 'Yes';
-  let addNewEmployees;
-  while(newEmployee === 'Yes'){
-    addNewEmployee = await inquirer.prompt(newEmployee);
-    addNewEmployee = await addNewEmployees.newEmployee;
+  let addMoreEmployees;
+  while(addNewEmployee === 'Yes'){
+    addMoreEmployees = await inquirer.prompt(newEmployee);
+    addNewEmployee = await addMoreEmployees.addAnotherEmployee;
 
     if (addNewEmployee === 'Yes') {
       await buildTeam();
@@ -116,7 +117,7 @@ const init = async () => {
   try {
     await buildTeam();
     await newEmployees();
-    await writeFileAsync('index.html', generateHTML(managerArr, internArr, engineerArr));
+    await writeFileAsync('index.html', generateHTML(managerArr, engineerArr, internArr));
       console.log('An index.html file was successfully created with your input!');
   }
   catch(err) {

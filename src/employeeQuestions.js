@@ -3,7 +3,7 @@
        type: 'list',
        name: 'role',
        message: 'What is the role of the employee?',
-       choices: ['Engineer', 'Intern', 'Manager'],
+       choices: ['Manager', 'Engineer', 'Intern'],
      },
      {
          type: 'input',
@@ -29,7 +29,7 @@
         name: 'officeNumber',
         message: 'What is the manager\'s office number?',
       },
-    ]
+    ];
 
     const engineerQuestions = [
         {
@@ -37,21 +37,20 @@
             name: 'github',
             message: 'What is the engineer\'s GitHub username?',
         },
-    ]
+    ];
 
-const internQuestions = [
-    {
-        type: 'input',
-        name: 'school',
-        message: 'What university does the intern attend?',
-        when: (input) => input.role === 'Intern'
-    },
-]
+    const internQuestions = [
+        {
+            type: 'input',
+            name: 'school',
+            message: 'What university does the intern attend?',
+        },
+    ];
 
 const newEmployee = [
      {
          type: 'list',
-         name: 'newEmployee',
+         name: 'addAnotherEmployee',
          message: 'Would you like to add another employee?',
          choices: ['Yes', 'No'],
      },
