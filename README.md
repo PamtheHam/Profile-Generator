@@ -4,6 +4,14 @@
 A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
 
 Here is a link to the walk-through video: 
+https://drive.google.com/file/d/1dTEhBT67-dIHwO9etqhBwnO2NOjNhOBe/view 
+
+
+
+![Screenshot of sample index.html file](./Assets/HTML-Screenshot.png)
+
+![Screenshot of browser](./Assets/Browser-Screenshot.png)
+
 
 ## Table of Contents
 
@@ -13,8 +21,6 @@ Here is a link to the walk-through video:
 - [Credits](#credits)
 - [License](#license)
 - [Contact Information](#contact-information)
-
-![Screenshot of sample index.html file]()
 
 ## Installation
 1. Clone this repository into a file on your computer into whichever folder you prefer
