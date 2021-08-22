@@ -8,12 +8,12 @@ const managerCard = (managerArr) => {
     <div class="card" style="width: 18rem;">
     <div class="card-body">
     <h5 class="card-title">${manager.name}</h5>
-    <p class="card-text"><i class="fas fa-mug-hot"></i> Manager</p>
+    <p class="card-text text-center"><i class="fas fa-mug-hot"></i> Manager</p>
     </div>
     <ul class="list-group list-group-flush">
-    <li class="list-group-item">${manager.id}</li>
-    <li class="list-group-item">${manager.email}</li>
-    <li class="list-group-item"> ${manager.officeNumber} </li>
+    <li class="list-group-item">ID: ${manager.id}</li>
+    <li class="list-group-item">Email: ${manager.email}</li>
+    <li class="list-group-item">Office #: ${manager.officeNumber} </li>
     </ul>
     </div>`;
     }
@@ -27,12 +27,12 @@ const engineerCard = (engineerArr) => {
         <div class="card" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">${engineer.name}</h5>
-        <p class="card-text"><i class="fas fa-glasses"></i> Engineer</p>
+        <p class="card-text text-center"><i class="fas fa-glasses"></i> Engineer</p>
         </div>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">${engineer.id}</li>
-        <li class="list-group-item">${engineer.email}</li>
-        <li class="list-group-item"> ${engineer.github} </li>
+        <li class="list-group-item">ID: ${engineer.id}</li>
+        <li class="list-group-item">Email: ${engineer.email}</li>
+        <li class="list-group-item">GitHub: ${engineer.github} </li>
         </ul>
         </div>`;
     }
@@ -46,12 +46,12 @@ const internCard = (internArr) => {
         <div class="card" style="width: 18rem;">
         <div class="card-body">
         <h5 class="card-title">${intern.name}</h5>
-        <p class="card-text"><i class="fas fa-user-graduate"></i> Intern</p>
+        <p class="card-text text-center"><i class="fas fa-user-graduate"></i> Intern</p>
         </div>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">${intern.id}</li>
-        <li class="list-group-item">${intern.email}</li>
-        <li class="list-group-item"> ${intern.school} </li>
+        <li class="list-group-item">ID: ${intern.id}</li>
+        <li class="list-group-item">Email: ${intern.email}</li>
+        <li class="list-group-item">University: ${intern.school} </li>
         </ul>
         </div>`;
     }
@@ -74,6 +74,11 @@ const generateHTML = (managerArr, engineerArr, internArr) => {
 </head>
 <body>
 <main>
+<div>
+<div class="container align-items-center card">
+<h1 class="text-center">Team Profiles</h1>
+</div>
+
 <div class="row align-items-center">
 <div class="col">
   ${managerCard(managerArr)}
@@ -87,6 +92,8 @@ const generateHTML = (managerArr, engineerArr, internArr) => {
   ${internCard(internArr)}
 </div> 
 </div>
+<div>
+</main>
 </body>
 </html>`
 
